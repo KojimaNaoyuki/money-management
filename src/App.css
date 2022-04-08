@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+/* /////////////////////////////////////////////////////////////// */
+/* mobile-menu */
+
+.open #mobile-menu-icon > span:nth-child(1) {
+  transform: translateY(12px) rotate(-135deg);
+}
+.open #mobile-menu-icon > span:nth-child(2) {
+  transform: scale(0);
+}
+.open #mobile-menu-icon > span:nth-child(3) {
+  transform: translateY(-12px) rotate(135deg);
+}

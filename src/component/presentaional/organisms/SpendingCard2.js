@@ -3,14 +3,6 @@ import styled from 'styled-components';
 
 import AddBtn from "../atoms/AddBtn";
 
-const Card = styled.div`
-    margin: 0;
-    padding: 0px;
-    position: relative;
-    height: 180px;
-    background-color: #FF9090;
-    border-radius: 5px;
-`;
 const Title = styled.h3`
     margin: 0;
     padding: 10px;
@@ -128,13 +120,24 @@ const RegisterBtnText = styled.h3`
     text-align: left;
 `;
 
-class SpendingCard extends Component {
+let Card;
+
+class SpendingCard2 extends Component {
     constructor(props) {
         super(props);
 
+        Card = styled.div`
+            margin: 0;
+            padding: 0px;
+            position: relative;
+            height: 180px;
+            background-color: ${props.cardColor};
+            border-radius: 5px;
+        `;
+
         this.state = {
             displayState: 0,
-            addBtnState: 0
+            addBtnState: 0,
         }
     }
 
@@ -181,7 +184,7 @@ class SpendingCard extends Component {
         } else if(this.state.displayState == 1) {
             return(
                 <Card>
-                    <Title>固定支出</Title>
+                    <Title>{this.props.cardTitle}</Title>
                     <DetailBoxWrap onClick={this.changeDisplay.bind(this)}>
                         <DetailBox>
                             <Comment>家賃</Comment>
@@ -246,4 +249,4 @@ class SpendingCard extends Component {
     }
 }
 
-export default SpendingCard;
+export default SpendingCard2;
